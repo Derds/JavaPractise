@@ -11,7 +11,7 @@ class HelloWorld {
 
 class CheatSheet{
   
-  String[] basicFormattingRules = 
+  String[] basicFormattingRules = new String[]();
   String[] rulesAboutClasses = new String[]();
   String[] rulesAboutMethods = new String[]();
 

@@ -19,7 +19,46 @@ public class Solution {
     */ 
 
     public static List<Integer> findFrequentNumbers(List<Integer> numbers, int k){
+        /* - make an output array / list
+    - make hashmap Key: number Value: frequency : hashmap has unique keys
+
+    - for each array element x in numbers
+
+        if x in hashmap keys:
+            key.value + 1
         
+        else:
+            add to hashmap with value 1 
+             -now return keys where value = k
+    for each key:
+        if hashmap.containsvalue(k):
+            output.add(key)
+
+    return output
+    */
+        List<Integer> output = new ArrayList<Integer>();
+
+        HashMap<Integer, Integer> frequencyHashMap = new HashMap<Integer, Integer>();
+
+        // Create a hashmap of keys and values where the key is the number and the value is the frequency
+        for (Integer x : numbers) {
+            //if the key exists, get the value and add one to it
+            if (frequencyHashMap.containsKey(x)) {
+                frequencyHashMap.put(x, frequencyHashMap.get(x) + 1);
+            //else set the key, and list value as 1
+            } else {
+                frequencyHashMap.put(x, 1);
+            }
+        }
+
+        //Use this hashmap to output the correct keys
+        // iterate over the keys and output the frequencies
+        for (Integer key : frequencyHashMap.keySet()) {
+            if (key == k) {
+                output.add(frequencyHashMap.get(key));
+            }
+        }
+        return output;
     }
 
     public static void main(String[] args) {
