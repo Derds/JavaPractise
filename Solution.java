@@ -52,10 +52,10 @@ public class Solution {
         }
 
         //Use this hashmap to output the correct keys
-        // iterate over the keys and output the frequencies
+        // if frequency or value = k, add key to output array 
         for (Integer key : frequencyHashMap.keySet()) {
-            if (key == k) {
-                output.add(frequencyHashMap.get(key));
+            if (frequencyHashMap.get(key) == k) {
+                output.add(key);
             }
         }
         return output;
